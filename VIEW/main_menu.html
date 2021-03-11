@@ -1,0 +1,43 @@
+<div class="side-nav-wrapper no-print">
+    <div class="sidebar-profile no-print">
+        <div class="sidebar-profile-image">
+            <img id="fotoPerfilUsuario" src="../assets/images/profile-image.png" class="circle" alt="">
+        </div>
+        <!--cabeçalho do menu-->
+        <div class="sidebar-profile-info">
+            <a href="javascript:void(0);" class="account-settings-link">
+                <p id="menu_user_name">@Nome_usuario</p>
+                <span><span id="menu_user_email">@Email_usuario</span><i class="material-icons right">arrow_drop_down</i></span>
+            </a>
+        </div>
+    </div>
+    <!--menu escondido-->
+    <div class="sidebar-account-settings no-print">
+        <ul>
+            <li class="divider"></li>
+            <li class="no-padding">
+                <a class="waves-effect waves-grey" onclick="sairDoSistema()"><i class="material-icons">exit_to_app</i>Sair</a>
+            </li>
+        </ul>
+    </div>
+<!--fim do menu escondido-->
+<!--menu principal a direita-->
+<ul class="sidebar-menu collapsible collapsible-accordion no-print" data-collapsible="accordion">
+
+    <li class="no-padding"><a class="waves-effect waves-grey" href="#" onclick="loadPage('novaAtividade.html');"><i class="material-icons">library_add</i>Nova Atividade</a></li>
+
+    <li class="no-padding"><a class="waves-effect waves-grey" href="#" onclick="loadPage('amigos.html');"><i class="material-icons">person_add</i>Amigos</a></li>
+
+    <li class="no-padding"><a class="waves-effect waves-grey" href="#" onclick="loadPage('listaAtividade.html');"><i class="material-icons">list</i>Lista de Atividade</a></li>
+
+    <li class="no-padding"><a class="waves-effect waves-grey" href="#" onclick="loadPage('listaAtividadeHistorico.html');"><i class="material-icons">library_books</i>Historico Atividade</a></li>
+
+</ul>
+
+<!--fim do menu principal a direita-->
+<!--footer do menu-->
+<div class="footer">
+    <p class="copyright">Engenharia da computação 2017©</p>
+    <!--<a href="#!">Temos de Privacidade</a>-->
+</div>
+</div>

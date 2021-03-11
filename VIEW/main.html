@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Title -->
+        <title>2Do</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta charset="UTF-8">
+        <meta name="description" content="Software para siscoserv brasil, ferramenta automatizada de cadastro e analise." />
+        <meta name="keywords" content="siscoserv, brasil, sistema, ferramenta, automatica, analise" />
+        <meta name="author" content="epux" />
+
+        <!-- Styles -->
+        <link type="text/css" rel="stylesheet" href="../assets/plugins/materialize/css/materialize.min.css"/>
+        <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+        <link href="../assets/css/iconFonts.css" rel="stylesheet">
+        <link href="../assets/plugins/material-preloader/css/materialPreloader.min.css" rel="stylesheet">
+        <link href="../assets/plugins/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="../assets/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css"/>
+        <link href="../assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
+
+        <link href="../assets/plugins/vertical-timeline/css/style.css" rel="stylesheet">
+
+        <!-- Theme Styles -->
+        <link href="../assets/css/alpha.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
+
+
+        <script src="../assets/plugins/vertical-timeline/js/modernizr.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+          @media print
+          {
+              .no-print, .no-print *
+              {
+                  display: none !important;
+              }
+          }
+        </style>
+
+    </head>
+    <style>
+      .scrollBar{
+        width: 250px;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      .scrollBar::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+      }
+
+      .scrollBar::-webkit-scrollbar{
+        width: 1px;
+        background-color: #F5F5F5;
+      }
+
+      .scrollBar::-webkit-scrollbar-thumb{
+        border-radius: 50px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: purple;
+      }
+
+      .modal-title {
+          margin: 0px;
+          line-height: 0;
+          padding: 28px;
+          font-size: 22px;
+          text-transform: uppercase;
+
+      }
+    </style>
+    <body>
+        <div class="loader-bg"></div>
+        <div class="loader">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-spinner-teal lighten-1">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                    <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mn-content fixed-sidebar">
+            <header class="mn-header navbar-fixed no-print" id="estrutura_topo">
+              <!--monto a estrutura do topo aqui-->
+            </header>
+
+            <aside id="chat-sidebar" class="side-nav white no-print scrollBar">
+                <div class="side-nav-wrapper no-print scrollBar" id="estrutura_menu_direita">
+                <!--monto a estrutura do menu a direita aqui-->
+                </div>
+            </aside>
+            <aside id="chat-messages" class="side-nav white scrollBar">
+            </aside>
+            <aside id="slide-out" class="side-nav white fixed scrollBar">
+
+            </aside>
+
+            <span id="main_conteudo">
+
+            </span>
+
+        </div>
+
+
+        <!-- Modal verificar usuario pedido de amizade-->
+        <div id="modal_DadosUsuarioPedidoAmizade" class="modal modal-fixed-footer" style="height:600px; width:550px">
+            <form id="form-modal_DadosUsuarioPedidoAmizade">
+              <div class="modal-title white-text blue darken-2">
+                Dados Usuário
+              </div>
+                <div class="modal-content">
+                    <p>Após a confirmação dos dados do usuário, vamos adicionalo a sua lista de amizade</p>
+                    <br><br>
+                    <input id="idAmizadePedidoAmizade" name="idAmizadePedidoAmizade" type="hidden" class="">
+                    <div class="row">
+                      <div class="input-field col m4 s4 l4">
+                        <img src="../assets/images/profile-image-1.png" alt="" class="circle" style="height:60px; width:60px" id="imageModalPedidoAmizade">
+                      </div>
+                      <div class="input-field col m8 s8 l8">
+                        <span id="nomeUsuarioModalPedidoAmizade">Alexandre</span><br>
+                        <span id="emailUsuarioModalPedidoAmizade">Alexandre@toDo</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="btn_modalPedidoDeAmizade" onclick="adicionarAmizade()">Adicionar!</a>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onclick="naoAceitarAmizade()">Não aceitar</a>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="left-sidebar-hover"></div>
+
+        <div id="main_scripts"></div>
+
+        <!-- Javascripts -->
+        <script src="../assets/plugins/jquery/jquery-2.2.0.min.js"></script>
+        <script src="../CONTROLLERS/default.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+          google.load('visualization', '1.0', {'packages':['corechart','table','orgchart','gauge']});
+        </script>
+
+        <script>
+            montaEstrutura();
+        </script>
+
+
+
+
+    </body>
+</html>

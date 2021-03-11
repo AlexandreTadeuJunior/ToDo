@@ -1,0 +1,83 @@
+<main class="mn-inner">
+    <div class="row">
+        <div class="col s12">
+            <div class="page-title">2Do</div>
+        </div>
+        <div class="col s12 m12 l12">
+            <div class="card">
+                <div class="card-content">
+                    <form id="form-table_atividade">
+                        <span class="card-title">Lista de atividades</span>
+                        <p>Lista de atividades que ainda não foram realizadas</p><br>
+                        <table id="table_atividade" name="form-table_atividade" class="display responsive-table datatable-example">
+                            <thead>
+                                <tr>
+                                    <th>Nome Atividade</th>
+                                    <th>descrição</th>
+                                    <th>Data</th>
+                                    <th>Editar</th>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                  <th>Nome Atividade</th>
+                                  <th>descrição</th>
+                                  <th>Data</th>
+                                  <th>Editar</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <!--Conteudo da tabela-->
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- Modal para adicionar um Nível de acesso-->
+        <div id="modal_novaAtividade" class="modal">
+            <form id="form-novaAtividade">
+                <div class="modal-content">
+                    <h4>Cadastrar</h4>
+                    <p>Cadastrar nova atividade</p>
+                    <div class="row">
+                      <div class="input-field col s6">
+                          <input name="idAtividade" id="idAtividade" type="hidden" class="validate" value="0">
+                          <input placeholder="Nome Atividade" name="nomeAtividade" id="nomeAtividade" type="text" class="validate">
+                      </div>
+                      <div class="input-field col s3">
+                          <input placeholder="Data Atividade" name="dtAtividade" id="dtAtividade" type="date" class="validate">
+                      </div>
+                      <div class="input-field col s3">
+                          <input placeholder="Hora Atividade" name="hrAtividade" id="hrAtividade" type="time" class="validate">
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                          <input placeholder="Descricao Atividade" name="descriAtividade" id="descriAtividade" type="text" class="validate">
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="btn_modalSalvar">Salvar</a>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+                </div>
+            </form>
+        </div>
+
+        <!--Botao editar-->
+        <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">reorder</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating blue modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Adicionar" href="#modal_novaAtividade" id="btn_cadAtividade"><i class="material-icons">add</i></a></li>
+                <li><a class="btn-floating red tooltipped" data-position="top" data-delay="50" data-tooltip="Excluir" id="btn_delAtividade"><i class="material-icons">delete</i></a></li>
+            </ul>
+        </div>
+    </div>
+</main>
+<script src="../CONTROLLERS/listaAtividade.js"></script>
+<script src="../CONTROLLERS/default.js"></script>

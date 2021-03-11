@@ -1,0 +1,67 @@
+<main class="mn-inner">
+    <div class="row">
+        <div class="col s12">
+            <div class="page-title">2Do</div>
+        </div>
+        <div class="col s12 m12 l12">
+            <div class="card">
+                <div class="card-content">
+                  <form id="form-table_atividade">
+                    <span class="card-title">Lista de amigos</span>
+                    <p>Listamos a sua rede de amigos</p><br>
+                    <ul class="collection" id="listaAmigos">
+                        <!--<li class="collection-item avatar">
+                            <img src="../assets/images/profile-image-1.png" alt="" class="circle">
+                            <span class="title">Alexandre Jr</span>
+                            <p>alexandre@todo.com.br</p>
+                            <a href="#!" class="secondary-content"><i class="material-icons">clear</i></a>
+                        </li>-->
+                    </ul>
+                  </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <!-- Modal para adicionar um Nível de acesso-->
+        <div id="modal_novoUsuario" class="modal modal-fixed-footer" style="height:600px; width:550px">
+            <form id="form-modal_novoUsuario">
+              <div class="modal-title white-text blue darken-2">
+                Confirmar dados usuário
+              </div>
+                <div class="modal-content">
+                    <p>Após a confirmação dos dados do usuário iremos enviar uma solicitação de amizade para ele</p>
+                    <br><br>
+                    <input id="idUsuarioNovoAmigo" name="idUsuarioNovoAmigo" type="hidden" class="">
+                    <div class="row">
+                      <div class="input-field col m4 s4 l4">
+                        <img src="../assets/images/profile-image-1.png" alt="" class="circle" style="height:60px; width:60px" id="imageModalAdicionarAmigo">
+                      </div>
+                      <div class="input-field col m8 s8 l8">
+                        <span id="nomeUsuarioModalAdicionarAmigo">Alexandre</span><br>
+                        <span id="emailUsuarioModalAdicionarAmigo">Alexandre@toDo</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id="btn_modalEnviarSolicitacao">Enviar!</a>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Fechar</a>
+                </div>
+            </form>
+        </div>
+
+        <!--Botao editar-->
+        <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">reorder</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating blue modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Adicionar amigo" href="#" id="btn_adicionarAmigo"><i class="material-icons">add</i></a></li>
+            </ul>
+        </div>
+    </div>
+</main>
+<script src="../CONTROLLERS/default.js"></script>
+<script src="../CONTROLLERS/amigos.js"></script>
